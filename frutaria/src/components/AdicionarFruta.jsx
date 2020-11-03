@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { actions } from '../actions/frutas.action';
 
 
 const AdicionarFruta = ()=>{
 
-    const [nome,setNome]= useState('')
-    const [quantidade,setQuantidade]=useState(0)
+    const [nome,setNome]= useState('');
+    const [quantidade, setQuantidade] = useState(0);
 
+    const dispatch = useDispatch();
 
     const adicionarFrutas = event =>{
         event.preventDefault();
@@ -14,26 +17,26 @@ const AdicionarFruta = ()=>{
         const fruta ={
             id: new Date(),
             nome,
-            quantidade
+            quantidade,
         };
 
-        console.log('adicionar Fruta',fruta);
+       dispatch(actions.adicionar(fruta)); 
     };
 
 
     return(
         <form onSubmit={adicionarFrutas}>
             <input type="text"
-             name={nome} id="" 
+             name={nome} 
              placeholder="Nome da fruta:"
              required
              onChange={event => setNome(event.target.value)}
              />
             <input type="number"
              name={quantidade}
-              id="" placeholder="Quantidade:"
+               placeholder="Quantidade:"
               required
-             onChange={event => setNome(event.target.value)}
+             onChange={event => setQuantidade(event.target.value)}
                
               />
 
