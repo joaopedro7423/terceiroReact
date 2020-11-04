@@ -8,6 +8,7 @@ const Fruta=({fruta})=>{
     const dispatch = useDispatch();
   
     return(
+        <div>
    <div className="fruta">
         <ul>
             <li>
@@ -17,12 +18,11 @@ const Fruta=({fruta})=>{
                 <strong>Quantidade:</strong> {fruta.quantidade}
             </li>
         </ul>
-        <button onClick={()=>dispatch(actions.remover(fruta))}>
-            Remover
-        </button>
+        <button onClick={()=>dispatch(actions.remover(fruta))}>&times;</button>
 
+    </div>
     </div>
     );
 };
 
-export default Fruta
+export default Fruta;
