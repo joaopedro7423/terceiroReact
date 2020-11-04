@@ -8,8 +8,8 @@ const Fruta=({fruta})=>{
     const dispatch = useDispatch();
   
     return(
-        <div>
-   <div className="fruta">
+        <div className="fruta">
+   <div >
         <ul>
             <li>
                 <strong>Fruta: </strong> {fruta.nome}
@@ -21,6 +21,10 @@ const Fruta=({fruta})=>{
         <button onClick={()=>dispatch(actions.remover(fruta))}>&times;</button>
 
     </div>
+
+     
+
+
     </div>
     );
 };
