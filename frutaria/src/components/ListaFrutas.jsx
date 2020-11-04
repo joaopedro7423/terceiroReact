@@ -36,17 +36,17 @@ const ListaFrutas = ()=>{
                 <div>
                     <label htmlFor="nome">Nome: </label>
                     <input type="text" id="nome" name="nome" value={props.values.nome} onChange={props.handleChange}/>
-                    {props.errors.nome ? <div>{props.errors.nome}</div>: null}
+                    {props.errors.nome ? <div className="invalid-feedback">{props.errors.nome}</div>: null}
                 </div>
                 <div>   
                        <label htmlFor="email">E-mail: </label>
                     <input type="email" id="email" name="email" value={props.values.email} onChange={props.handleChange}/>
-                    {props.errors.email ? <div>{props.errors.email}</div>: null}
+                    {props.errors.email ? <div className="invalid-feedback">{props.errors.email}</div>: null}
                  </div>
                  <div>   
                     <label htmlFor="date">Data de Nascimento: </label>
                     <input type="date" id="nascimento" name="nascimento" value={props.values.nascimento} onChange={props.handleChange} />
-                    {props.errors.nascimento ? <div>{props.errors.nascimento}</div>: null}
+                    {props.errors.nascimento ? <div className="invalid-feedback">{props.errors.nascimento}</div>: null}
                 </div>
                  <button type="submit">Adicionar</button>
             </form>
